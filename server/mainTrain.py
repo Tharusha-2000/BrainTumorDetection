@@ -100,3 +100,6 @@ model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accurac
 model.fit(x_train,y_train,batch_size=16,verbose=1,epochs=10,validation_data=(x_test,y_test),shuffle=False)
 
 model.save('server/BrainTumor10EpochsCategorical.h5')
+
+
+
