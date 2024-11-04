@@ -21,7 +21,7 @@ input_img=np.expand_dims(img, axis=0)
 
 result=model.predict(input_img)
 
-print(f"{result}")
+# print(f"{result}")
 
 if result.shape[1] > 1:
         predicted_class = np.argmax(result)
