@@ -2,28 +2,56 @@
 {% block content %}
 
 <center>
-<br><h2>Brain Tumor Classification Using Deep Learning</h2><br>
+    <br><h3 class="title">Upload Your ECG Image for Brain Tumor Detection</h3><br>
 
-    <form id="upload-file" method="post" enctype="multipart/form-data">
-         <input type="file" name="file" class="btn btn-success" id="imageUpload" accept=".png, .jpg, .jpeg">
-    </form>
-
-
-    <div class="image-section" style="display:none;">
-         <img id="imagePreview"  class="img-responsive" src="#" style="width:300px;height:300px;"/><br><br>
-         <div>
-            <button type="button" class="btn btn-info btn-lg " id="btn-predict">Predict!</button>
-         </div>
+<form id="upload-file" method="post" enctype="multipart/form-data" class="form-inline justify-content-center">
+    <div class="form-group mb-2">
+        <input type="file" name="file" class="form-control-file btn btn-success" id="imageUpload" accept=".png, .jpg, .jpeg">
     </div>
+</form>
 
+<div class="image-section mt-4" style="display:none;">
+    <img id="imagePreview" class="img-thumbnail" src="#" style="width:300px;height:300px;"/>
+    <br><br>
+    <div>
+        <button type="button" class="btn btn-info btn-lg" id="btn-predict">Predict!</button>
+    </div>
+</div>
 
+<div class="loader mt-4" style="display:none;">
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 
-    <div class="loader" style="display:none;"></div>
+<h3 id="result" class="mt-4">
+    <span></span>
+</h3>
+</center>
+<br><br>
 
-    <h3 id="result">
-        <span> </span>
-    </h3>
-
-
-</center><br><br>
+<style>
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+h2 {
+    color: #ffffff;
+}
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+.img-thumbnail {
+    border: 2px solid #dee2e6;
+}
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+</style>
 {% endblock %}
